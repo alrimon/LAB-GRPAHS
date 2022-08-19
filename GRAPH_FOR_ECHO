@@ -1,0 +1,135 @@
+{r}
+Graph_data <- read.csv("Graph_Priya_Razoan.csv")
+Value <- c("SYST  VOL","DIAS VOL","SV (LV Trace)","EF","EF (LV Trace)","CO (LV Trace)","Simp FAC","LV Mass","LV Mass (Corrected)","Heart Rate_LV Trace","Ao Root","LA","IVS;d","LVID;d","LVPW;d","IVS;s","LVID;s","LVPW;s","MV E","MV A","MV Decel","IVRT","IVCT","MV E/A","E'","A'","E'/A'","A'/E'","MV E/E'","GLS","GCS","ESV","EDV","SV","EF","CO","FS","Heart Rate (bpm)_long","Heart Rate (bpm)_short")
+Position <- c(1:39)
+total <- data.frame(Value,Position)
+
+library(ggplot2)
+for (i in 1:39) {
+  library(dplyr)
+  ggplot(Graph_data, aes(x=Condition, y=Graph_data[,i], fill=Mice, color = Mice, group=Mice)) +
+  geom_point(shape = 21,  size = 3, stroke = 0.5)+
+    ylab(total[i,1])+
+  geom_line(size=0.5, color="DarkGrey")+ facet_wrap(~Owner)
+  ggsave(file=paste0("myplot_",total[i,1],".tiff"))
+}
+
+{r}
+Graph_data <- read.csv("Graph_Priya_Razoan.csv")
+Value <- c("SYST  VOL","DIAS VOL","SV (LV Trace)","EF_","EF (LV Trace)","CO (LV Trace)","Simp FAC","LV Mass","LV Mass (Corrected)","Heart Rate_LV Trace","Ao Root","LA","IVS;d","LVID;d","LVPW;d","IVS;s","LVID;s","LVPW;s","MV E","MV A","MV Decel","IVRT","IVCT","MV E by A","E'","A'","E' by A'","A' by E'","MV E by E'","GLS","GCS","ESV","EDV","SV","EF","CO","FS","Heart Rate (bpm)_long","Heart Rate (bpm)_short")
+Position <- c(1:39)
+total <- data.frame(Value,Position)
+
+library(ggplot2)
+for (i in 1:39) {
+  library(dplyr)
+  ggplot(Graph_data, aes(x=Condition, y=Graph_data[,i], fill=Mice, color = Mice, group=Mice)) +
+  geom_point(shape = 21,  size = 1.25, stroke = 0.5)+
+    ylab(total[i,1])+
+    expand_limits(x = 0, y = 0) +
+  geom_line(size=0.5, color="DarkGrey")+ facet_wrap(~Owner)
+  ggsave(path = "Figures", file=paste0("myplot_",total[i,1],".tiff"),height = 2.75, width = 5)
+}
+
+{r}
+Graph_data <- read.csv("Graph_Priya_Razoan.csv")
+Value <- c("SYST  VOL","DIAS VOL","SV (LV Trace)","EF_","EF (LV Trace)","CO (LV Trace)","Simp FAC","LV Mass","LV Mass (Corrected)","Heart Rate_LV Trace","Ao Root","LA","IVS;d","LVID;d","LVPW;d","IVS;s","LVID;s","LVPW;s","MV E","MV A","MV Decel","IVRT","IVCT","MV E by A","E'","A'","E' by A'","A' by E'","MV E by E'","GLS","GCS","ESV","EDV","SV","EF","CO","FS","Heart Rate (bpm)_long","Heart Rate (bpm)_short")
+Position <- c(1:39)
+total <- data.frame(Value,Position)
+
+library(ggplot2)
+for (i in 1:10) {
+  library(dplyr)
+  ggplot(Graph_data, aes(x=Condition, y=Graph_data[,i], fill=Mice, color = Mice, group=Mice)) +
+  geom_point(shape = 21,  size = 1.25, stroke = 0.5)+
+    ylab(total[i,1])+
+    expand_limits(x = 0, y = 0) +
+  geom_line(size=0.5, color="DarkGrey")+ facet_wrap(~Owner)
+  ggsave(path = "Figures", file=paste0("Echo_1_",total[i,1],".tiff"),height = 2.75, width = 5)
+}
+
+
+{r}
+Graph_data <- read.csv("Graph_Priya_Razoan.csv")
+Value <- c("SYST  VOL","DIAS VOL","SV (LV Trace)","EF_","EF (LV Trace)","CO (LV Trace)","Simp FAC","LV Mass","LV Mass (Corrected)","Heart Rate_LV Trace","Ao Root","LA","IVS;d","LVID;d","LVPW;d","IVS;s","LVID;s","LVPW;s","MV E","MV A","MV Decel","IVRT","IVCT","MV E by A","E'","A'","E' by A'","A' by E'","MV E by E'","GLS","GCS","ESV","EDV","SV","EF","CO","FS","Heart Rate (bpm)_long","Heart Rate (bpm)_short")
+Position <- c(1:39)
+total <- data.frame(Value,Position)
+
+library(ggplot2)
+for (i in 11:18) {
+  library(dplyr)
+  ggplot(Graph_data, aes(x=Condition, y=Graph_data[,i], fill=Mice, color = Mice, group=Mice)) +
+  geom_point(shape = 21,  size = 1.25, stroke = 0.5)+
+    ylab(total[i,1])+
+    expand_limits(x = 0, y = 0) +
+  geom_line(size=0.5, color="DarkGrey")+ facet_wrap(~Owner)
+  ggsave(path = "Figures", file=paste0("Echo_Wall Thickness_",total[i,1],".tiff"),height = 2.75, width = 5)
+}
+
+{r}
+Graph_data <- read.csv("Graph_Priya_Razoan.csv")
+Value <- c("SYST  VOL","DIAS VOL","SV (LV Trace)","EF_","EF (LV Trace)","CO (LV Trace)","Simp FAC","LV Mass","LV Mass (Corrected)","Heart Rate_LV Trace","Ao Root","LA","IVS;d","LVID;d","LVPW;d","IVS;s","LVID;s","LVPW;s","MV E","MV A","MV Decel","IVRT","IVCT","MV E by A","E'","A'","E' by A'","A' by E'","MV E by E'","GLS","GCS","ESV","EDV","SV","EF","CO","FS","Heart Rate (bpm)_long","Heart Rate (bpm)_short")
+Position <- c(1:39)
+total <- data.frame(Value,Position)
+
+library(ggplot2)
+for (i in 11:18) {
+  library(dplyr)
+  ggplot(Graph_data, aes(x=Condition, y=Graph_data[,i], fill=Mice, color = Mice, group=Mice)) +
+  geom_point(shape = 21,  size = 1.25, stroke = 0.5)+
+    ylab(total[i,1])+
+    expand_limits(x = 0, y = 0) +
+  geom_line(size=0.5, color="DarkGrey")+ facet_wrap(~Owner)
+  ggsave(path = "Figures", file=paste0("Echo_Wall Thickness_",total[i,1],".tiff"),height = 2.75, width = 5)
+}
+
+{r}
+Graph_data <- read.csv("Graph_Priya_Razoan.csv")
+Value <- c("SYST  VOL","DIAS VOL","SV (LV Trace)","EF_","EF (LV Trace)","CO (LV Trace)","Simp FAC","LV Mass","LV Mass (Corrected)","Heart Rate_LV Trace","Ao Root","LA","IVS;d","LVID;d","LVPW;d","IVS;s","LVID;s","LVPW;s","MV E","MV A","MV Decel","IVRT","IVCT","MV E by A","E'","A'","E' by A'","A' by E'","MV E by E'","GLS","GCS","ESV","EDV","SV","EF","CO","FS","Heart Rate (bpm)_long","Heart Rate (bpm)_short")
+Position <- c(1:39)
+total <- data.frame(Value,Position)
+
+library(ggplot2)
+for (i in 30:39) {
+  library(dplyr)
+  ggplot(Graph_data, aes(x=Condition, y=Graph_data[,i], fill=Mice, color = Mice, group=Mice)) +
+  geom_point(shape = 21,  size = 1.25, stroke = 0.5)+
+    ylab(total[i,1])+
+    expand_limits(x = 0, y = 0) +
+  geom_line(size=0.5, color="DarkGrey")+ facet_wrap(~Owner)
+  ggsave(path = "Figures", file=paste0("Echo_Strain_",total[i,1],".tiff"),height = 2.75, width = 5)
+}
+
+{r}
+Graph_data <- read.csv("Graph_Priya_Razoan.csv")
+Value <- c("SYST  VOL","DIAS VOL","SV (LV Trace)","EF_","EF (LV Trace)","CO (LV Trace)","Simp FAC","LV Mass","LV Mass (Corrected)","Heart Rate_LV Trace","Ao Root","LA","IVS;d","LVID;d","LVPW;d","IVS;s","LVID;s","LVPW;s","MV E","MV A","MV Decel","IVRT","IVCT","MV E by A","E'","A'","E' by A'","A' by E'","MV E by E'","GLS","GCS","ESV","EDV","SV","EF","CO","FS","Heart Rate (bpm)_long","Heart Rate (bpm)_short")
+Position <- c(1:39)
+total <- data.frame(Value,Position)
+
+library(ggplot2)
+for (i in 25:29) {
+  library(dplyr)
+  ggplot(Graph_data, aes(x=Condition, y=Graph_data[,i], fill=Mice, color = Mice, group=Mice)) +
+  geom_point(shape = 21,  size = 1.25, stroke = 0.5)+
+    ylab(total[i,1])+
+    expand_limits(x = 0, y = 0) +
+  geom_line(size=0.5, color="DarkGrey")+ facet_wrap(~Owner)
+  ggsave(path = "Figures", file=paste0("Echo_Tissue Doppler",total[i,1],".tiff"),height = 2.75, width = 5)
+}
+
+{r}
+Graph_data <- read.csv("Graph_Priya_Razoan.csv")
+Value <- c("SYST  VOL","DIAS VOL","SV (LV Trace)","EF_","EF (LV Trace)","CO (LV Trace)","Simp FAC","LV Mass","LV Mass (Corrected)","Heart Rate_LV Trace","Ao Root","LA","IVS;d","LVID;d","LVPW;d","IVS;s","LVID;s","LVPW;s","MV E","MV A","MV Decel","IVRT","IVCT","MV E by A","E'","A'","E' by A'","A' by E'","MV E by E'","GLS","GCS","ESV","EDV","SV","EF","CO","FS","Heart Rate (bpm)_long","Heart Rate (bpm)_short")
+Position <- c(1:39)
+total <- data.frame(Value,Position)
+
+library(ggplot2)
+for (i in 30:39) {
+  library(dplyr)
+  ggplot(Graph_data, aes(x=Condition, y=Graph_data[,i], fill=Mice, color = Mice, group=Mice)) +
+  geom_point(shape = 21,  size = 1.25, stroke = 0.5)+
+    ylab(total[i,1])+
+    expand_limits(x = 0, y = 0) +
+  geom_line(size=0.5, color="DarkGrey")+ facet_wrap(~Owner)
+  ggsave(path = "Figures", file=paste0("Echo_Strain_",total[i,1],".tiff"),height = 2.75, width = 5)
+}
