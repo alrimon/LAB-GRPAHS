@@ -1,0 +1,40 @@
+﻿Serial,Parameters,Unit,Folder,Group
+1,SYST  VOL,uL,SYST  VOL,Basic
+2,DIAS VOL,uL,DIAS VOL,Basic
+3,SV (LV Trace),uL,SV (LV Trace),Basic
+4,EF,%,EF,Basic
+5,EF (LV Trace),%,EF (LV Trace),Basic
+6,CO (LV Trace),mL/min,CO (LV Trace),Basic
+7,Simp FAC,%,Simp FAC,Basic
+8,LV Mass,mg,LV Mass,Basic
+9,LV Mass (Corrected),mg,LV Mass (Corrected),Basic
+10,Heart Rate_LV Trace,bpm,Heart Rate_LV Trace,Basic
+11,Ao Root,mm,Ao Root,Wall thickness
+12,LA,mm,LA,Wall thickness
+13,IVS;d,mm,IVS;d,Wall thickness
+14,LVID;d,mm,LVID;d,Wall thickness
+15,LVPW;d,mm,LVPW;d,Wall thickness
+16,IVS;s,mm,IVS;s,Wall thickness
+17,LVID;s,mm,LVID;s,Wall thickness
+18,LVPW;s,mm,LVPW;s,Wall thickness
+19,MV E,mm/s,MV E,Mitral Doppler
+20,MV A,mm/s,MV A,Mitral Doppler
+21,MV Decel,mm/s^2,MV Decel,Mitral Doppler
+22,IVRT,ms,IVRT,Mitral Doppler
+23,IVCT,ms,IVCT,Mitral Doppler
+24,MV E/A,,MV E by A,Mitral Doppler
+25,E',mm/s,E',Tissue doppler
+26,A',mm/s,A',Tissue doppler
+27,E'/A',,E' by A',Tissue doppler
+28,A'/E',,A' by E',Tissue doppler
+29,E/ E',,MV E by E',Tissue doppler
+30,GLS,%,GLS,Strain
+31,GCS,,GCS,Strain
+32,ESV,uL,ESV,Strain
+33,EDV,uL,EDV,Strain
+34,SV,uL,SV,Strain
+35,EF_strain,%,EF,Strain
+36,CO,mL/min,CO,Strain
+37,FS,%,FS,Strain
+38,Heart Rate_long axis,bpm,Heart Rate_long axis,Strain
+39,Heart Rate_short axis,bpm,Heart Rate_short axis,Strain
