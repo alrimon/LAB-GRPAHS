@@ -1,0 +1,39 @@
+#Programming in R using R notebook
+
+#For Sham Group
+{r}
+Sham <- read.csv("TACELyzmer_Sham_187-191.csv") #place the file name and also add the mice number in the first column and change the row 1 , col 1 to "Mice" and row 1, col 2 to"Genre"
+Sham1 <- subset(Sham,Genre=="Series Name" )
+print(Sham1)
+for (i in Sham1$X) {
+  Sham.output <- subset(Sham, Mice==i && Genre=="A'"|Genre=="E'"|Genre=="IVCT"|Genre=="IVRT"|Genre=="MV A"|Genre=="MV Decel"|Genre=="MV Decel"|Genre=="MV E"|Genre=="A'/E'"|Genre=="E'/A'"|Genre=="MV Area (simplified)"|Genre=="MV E/A"|Genre=="MV E/E'"|Genre=="MV PHT (simplified)"|Genre=="SimpAreaMid;d"|Genre=="SimpAreaMid;s"|Genre=="SimpLength;d"|Genre=="SimpLength;s"|Genre=="Simp FAC"|Genre=="Simp FS"|Genre=="Ao Root"|Genre=="LA"|Genre=="IVS;d"|Genre=="IVS;s"|Genre=="LV Trace"|Genre=="LVID;d"|Genre=="LVID;s"|Genre=="LVPW;d"|Genre=="LVPW;s"|Genre=="CO (LV Trace)"|Genre=="Diameter;d (LV Trace)"|Genre=="Diameter;s (LV Trace)"|Genre=="EF"|Genre=="EF (LV Trace)"|Genre=="FS"|Genre=="FS (LV Trace)"|Genre=="LV Mass"|Genre=="LV Mass (Corrected)"|Genre=="LV Vol;d"|Genre=="LV Vol;s"|Genre=="SV (LV Trace)"|Genre=="V;d (LV Trace)"|Genre=="V;s (LV Trace)")
+  #the perameters that you are going to extract added to this
+}
+
+Sham.output <- Sham.output[1:7]
+Sham.output$Disease <- "Sham" #Add new column head "Disease" and the value is "Sham"
+Sham.output$Study_Owner <- "Razoan" #Add new column head "Study_Owner" and the value is "Razoan"
+
+library(dplyr)
+Sham.output <- Sham.output %>% mutate(Mice=recode(Mice,"188mer" = '188 Lyzmer', "191flx" = "191 flox", "190mer" = "190 Lyzmer", "187flx" = '187 flox')) #changing the name form "188mer" to "188 Lyzmer"
+write.csv(Sham.output,"Sham.Output.csv")
+
+
+#For TAC group
+{r}
+TAC2wk <- read.csv("TACELyzmer_TAC2wk_187-191.csv") #place the file name and also add the mice number in the first column and change the row 1 , col 1 to "Mice" and row 1, col 2 to"Genre"
+TAC2wk1 <- subset(TAC2wk,Genre=="Series Name" )
+print(TAC2wk1)
+for (i in TAC2wk1$X) {
+  TAC2wk.output <- subset(TAC2wk, Mice==i && Genre=="A'"|Genre=="A'"|Genre=="E'"|Genre=="IVCT"|Genre=="IVRT"|Genre=="MV A"|Genre=="MV Decel"|Genre=="MV Decel"|Genre=="MV E"|Genre=="A'/E'"|Genre=="E'/A'"|Genre=="MV Area (simplified)"|Genre=="MV E/A"|Genre=="MV E/E'"|Genre=="MV PHT (simplified)"|Genre=="SimpAreaMid;d"|Genre=="SimpAreaMid;s"|Genre=="SimpLength;d"|Genre=="SimpLength;s"|Genre=="Simp FAC"|Genre=="Simp FS"|Genre=="Ao Root"|Genre=="LA"|Genre=="IVS;d"|Genre=="IVS;s"|Genre=="LV Trace"|Genre=="LVID;d"|Genre=="LVID;s"|Genre=="LVPW;d"|Genre=="LVPW;s"|Genre=="CO (LV Trace)"|Genre=="Diameter;d (LV Trace)"|Genre=="Diameter;s (LV Trace)"|Genre=="EF"|Genre=="EF (LV Trace)"|Genre=="FS"|Genre=="FS (LV Trace)"|Genre=="LV Mass"|Genre=="LV Mass (Corrected)"|Genre=="LV Vol;d"|Genre=="LV Vol;s"|Genre=="SV (LV Trace)"|Genre=="V;d (LV Trace)"|Genre=="V;s (LV Trace)")
+  #the perameters that you are going to extract added to this
+}
+TAC2wk.output <- TAC2wk.output[1:7]
+TAC2wk.output$Disease <- "TAC2wk" #Add new column head "Disease" and the value is "Sham"
+TAC2wk.output$Study_Owner <- "Razoan" #Add new column head "Study_Owner" and the value is "Razoan"
+write.csv(TAC2wk.output,"TAC2wk.Output.csv")
+
+#For combining SHAM and TAC
+{r}
+Combined.output <-rbind(Sham.output,TAC2wk.output)
+write.csv(Combined.output,"Combined.output.csv")
