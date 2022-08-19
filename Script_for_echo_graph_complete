@@ -1,0 +1,15 @@
+```{r}
+library(r2symbols)
+Graph_data <- read.csv("Graph_Priya_Razoan.csv") #The processed raw file of the data
+Para <- read.csv("Parameters.csv") #the file containing the Parameters, Unit, File Name, Group
+library(ggplot2)
+library(dplyr)
+for (i in 1:39) {
+  ggplot(Graph_data, aes(x=Condition, y=Graph_data[,i], fill=Mice, color = Mice, group=Mice)) +
+    geom_point(shape = 21,  size = 1.25, stroke = 0.5)+
+    ylab(paste0(Para[i,2]," (",Para[i,3],")"))+ #Para[i,2] indicates taking value from "i" th row and 2nd column
+    expand_limits(x = 0, y = 0) + #stating the graph will start from zero
+  geom_line(size=0.25, color="DarkGrey")+ facet_wrap(~Owner) #facet wrap means to divide data according to "Owner"
+  ggsave(path = "Figures", file=paste0(Para[i,1],"_","Echo_",Para[i,5],"_",Para[i,4],".tiff"),height = 2.75, width = 5)
+}
+```
