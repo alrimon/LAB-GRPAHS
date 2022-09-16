@@ -1,0 +1,16 @@
+```{r}
+Graph_data <- read.csv("Echo_data_sample.csv")
+library(ggplot2)
+library(dplyr)
+library(FSA)
+df.summary = Summarize(FAC ~ Model + Genotype, data=Graph_data)
+df.summary$se <- df.summary$sd/sqrt(df.summary$n)
+
+ggplot(data=Graph_data, aes(x=Genotype, y=FAC, color = Genotype, fill = Genotype)) +
+  geom_point(shape = 16,  size = 1.5, stroke = 0.5)+
+  expand_limits(x = 0, y = 0)+
+  facet_wrap(~factor(Model,levels=c("Sham","MI 3d","MI 7d")))+
+  geom_point(aes(x=Genotype,y=mean),data = df.summary,shape = 22,  size = 3, stroke = 0.5, color="Black")+
+  geom_errorbar(aes(x=Genotype,y=mean,ymin = mean-se, ymax = mean+se),data = df.summary, width=0.2, color="Black")
+ggsave("Myplot.tiff",width=10,height=3)
+```
