@@ -1,0 +1,8 @@
+```{r}
+gapminder <- read.csv("Exercise.csv")
+library(tidyverse)
+ggplot(gapminder, 
+       aes(x = factor(Model, level = c('Sham','MI 3d','MI 1w','MI 2w','MI 4w')), y = LA_MM, color = Genotype, group = Mice)) +
+    geom_point() +
+    geom_line()
+```
